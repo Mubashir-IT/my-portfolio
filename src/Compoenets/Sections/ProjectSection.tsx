@@ -2,13 +2,17 @@
 
 import { Button } from "../ui/button"
 import { ExternalLink, Github } from "lucide-react"
+import travel from "../../assets/travel.png"
+import mern from "../../assets/mern.png"
+import todo from "../../assets/todo.png"
+import profile from "../../assets/portfolio.png"
 
 export default function ProjectsSection() {
     const projects = [
         {
             title: "TRAVELIZO-Website",
             description: "A simple and clean travel website showcasing popular destinations and basic booking features.",
-            image: "src/assets/travel.png?height=300&width=400",
+            image: travel,
             tags: ["WEB DESIGN", "DEVELOPMENT"],
             liveUrl: "https://travelizo-u2bt.vercel.app/",
             githubUrl: "",
@@ -16,7 +20,7 @@ export default function ProjectsSection() {
         {
             title: "MERN Auth System",
             description: "A secure and scalable user authentication system built with MongoDB, Express, React, and Node.js.",
-            image: "src/assets/mern.png?height=300&width=400",
+            image: mern,
             tags: ["WEB APP", "DEVELOPMENT", "AUTHENTICATION"],
             liveUrl: "#",
             githubUrl: "#",
@@ -26,7 +30,7 @@ export default function ProjectsSection() {
             title: "Utility Web App",
             category: "WEB DEVELOPMENT",
             description: "A simple and practical website featuring a To-Do List and an Age Calculator to help manage tasks and track age effortlessly.",
-            image: "src/assets/todo.png?height=300&width=400",
+            image: todo,
             tags: ["WEB APP", "TOOLS"],
             liveUrl: "https://code-alpha-task1-gules.vercel.app/",
             githubUrl: "#",
@@ -36,7 +40,7 @@ export default function ProjectsSection() {
             title: "Portfolio Website",
             category: "WEB DESIGN",
             description: "Clean and modern portfolio website for a creative professional.",
-            image: "src/assets/portfolio.png?height=300&width=400",
+            image: profile,
             tags: ["WEB DESIGN", "DEVELOPMENT"],
             liveUrl: "https://my-portfolio-azure-five-45.vercel.app/",
             githubUrl: "#",
