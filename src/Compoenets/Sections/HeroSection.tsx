@@ -2,7 +2,7 @@
 
 import { Button } from "../ui/button"
 import { ChevronDown, Download } from "lucide-react"
-// import Image from "next/image"
+import image from "../../assets/profile.jpg"
 
 export default function HeroSection() {
     const scrollToNext = () => {
@@ -50,7 +50,7 @@ export default function HeroSection() {
               className="w-full h-auto rounded-2xl object-cover"
             /> */}
                         <img
-                            src="src/assets/profile.jpg"
+                            src={image}
                             alt="Rob Oliver - Professional Portrait"
                             className="w-full h-auto rounded-2xl object-cover"
                         />
