@@ -1,4 +1,4 @@
-import { Monitor, Code, Smartphone, Database, Palette, Link, Server, Layers } from "lucide-react"
+import { Monitor, Code, Database, Link, Layers } from "lucide-react"
 
 export default function ServicesSection() {
   const services = [

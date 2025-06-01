@@ -1,5 +1,3 @@
-import React from "react";
-
 // CircularProgress component
 function CircularProgress({ percentage = 0, className = "text-blue-500" }) {
   const radius = 50;

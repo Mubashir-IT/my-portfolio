@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "../ui/button"
-import { ChevronDown, Download, Link } from "lucide-react"
+import { ChevronDown, Download } from "lucide-react"
 // import Image from "next/image"
 
 export default function HeroSection() {

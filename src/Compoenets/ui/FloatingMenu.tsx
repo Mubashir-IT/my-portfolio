@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { X, Home, User, FileText, Briefcase, Code, FolderOpen, MessageSquare, Mail } from "lucide-react"
+import { X, Home, User, Briefcase, Code, FolderOpen, Mail } from "lucide-react"
 
 export default function FloatingMenu() {
   const [isOpen, setIsOpen] = useState(false)

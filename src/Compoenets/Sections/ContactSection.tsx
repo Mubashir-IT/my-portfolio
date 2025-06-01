@@ -4,15 +4,6 @@ import { Textarea } from "../ui/textarea"
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react"
 
 export default function ContactSection() {
-  const brands = [
-    { name: "Spironia", logo: "/placeholder.svg?height=40&width=80" },
-    { name: "Handmade", logo: "/placeholder.svg?height=40&width=80" },
-    { name: "Miller", logo: "/placeholder.svg?height=40&width=80" },
-    { name: "Vintage", logo: "/placeholder.svg?height=40&width=80" },
-    { name: "Bronx", logo: "/placeholder.svg?height=40&width=80" },
-    { name: "Brand", logo: "/placeholder.svg?height=40&width=80" },
-  ]
-
   return (
     <section className="pt-20 pb-5 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
