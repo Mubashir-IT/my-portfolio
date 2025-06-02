@@ -24,8 +24,7 @@ export default function ProjectsSection() {
             tags: ["WEB APP", "DEVELOPMENT", "AUTHENTICATION"],
             liveUrl: "#",
             githubUrl: "#",
-        }
-        ,
+        },
         {
             title: "Utality-base Website",
             description: "A simple and practical website featuring a To-Do List and an Age Calculator to help manage tasks and track age effortlessly.",
@@ -33,8 +32,7 @@ export default function ProjectsSection() {
             tags: ["WEB APP", "TOOLS"],
             liveUrl: "https://code-alpha-task1-gules.vercel.app/",
             githubUrl: "#",
-        }
-        ,
+        },
         {
             title: "Portfolio Website",
             description: "Clean and modern portfolio website for a creative professional.",
@@ -44,23 +42,13 @@ export default function ProjectsSection() {
             githubUrl: "#",
         },
         {
-            title: "OrthoStride App ",
+            title: "OrthoStride App",
             description: `Developed a smart health monitoring mobile app using React Native and Node.js, designed to track gait patterns for users wearing sensor-equipped smart shoes.`,
             image: "/placeholder.svg?height=300&width=400",
             tags: ["WEB DESIGN", "DEVELOPMENT"],
             liveUrl: "#",
             githubUrl: "#",
-        }
-
-        // {
-        //     title: "Restaurant App",
-        //     category: "MOBILE APP",
-        //     description: "Food ordering mobile app with seamless user experience.",
-        //     image: "/placeholder.svg?height=300&width=400",
-        //     tags: ["MOBILE APP", "DEVELOPMENT"],
-        //     liveUrl: "#",
-        //     githubUrl: "#",
-        // },
+        },
     ]
 
     return (
@@ -86,12 +74,20 @@ export default function ProjectsSection() {
                                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
-                                    <Button className="rounded-full bg-gray-200 hover:bg-gray-300">
-                                        <ExternalLink className="w-4 h-4" />
-                                    </Button>
-                                    <Button className="rounded-full bg-gray-200 hover:bg-gray-300">
-                                        <Github className="w-4 h-4" />
-                                    </Button>
+                                    {project.liveUrl && project.liveUrl !== "#" && (
+                                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                            <Button className="rounded-full bg-gray-200 hover:bg-gray-300">
+                                                <ExternalLink className="w-4 h-4" />
+                                            </Button>
+                                        </a>
+                                    )}
+                                    {project.githubUrl && project.githubUrl !== "#" && (
+                                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                            <Button className="rounded-full bg-gray-200 hover:bg-gray-300">
+                                                <Github className="w-4 h-4" />
+                                            </Button>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                             <div className="p-6">
