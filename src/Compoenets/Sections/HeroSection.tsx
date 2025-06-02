@@ -21,8 +21,7 @@ export default function HeroSection() {
                         <h1 className="text-4xl md:text-6xl font-light text-gray-600 mb-4">My Self,</h1>
                         <h2 className="text-4xl md:text-6xl font-light text-red-400 mb-8">Mubashir Ali Hassan</h2>
                         <p className="text-gray-500 text-lg max-w-md mx-auto lg:mx-0 mb-8 leading-relaxed">
-                            I’m a Full Stack Developer crafting modern web and mobile experiences.
-                            I build interactive, scalable, and user-focused solutions from front to back.            </p>
+                            I’m a Full Stack Developer focused on building modern, responsive web experiences. I create scalable and user-centered solutions using the MERN stack, always eager to learn and grow in the tech world..            </p>
                         <a
                             href="https://drive.google.com/uc?export=download&id=112k1M-KGZjOd3ZTbeeJExHAwL8qVVD8n"
                             target="_blank"

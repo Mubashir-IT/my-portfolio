@@ -27,8 +27,7 @@ export default function ProjectsSection() {
         }
         ,
         {
-            title: "Utility Web App",
-            category: "WEB DEVELOPMENT",
+            title: "Utality-base Website",
             description: "A simple and practical website featuring a To-Do List and an Age Calculator to help manage tasks and track age effortlessly.",
             image: todo,
             tags: ["WEB APP", "TOOLS"],
@@ -38,7 +37,6 @@ export default function ProjectsSection() {
         ,
         {
             title: "Portfolio Website",
-            category: "WEB DESIGN",
             description: "Clean and modern portfolio website for a creative professional.",
             image: profile,
             tags: ["WEB DESIGN", "DEVELOPMENT"],
@@ -47,10 +45,7 @@ export default function ProjectsSection() {
         },
         {
             title: "OrthoStride App ",
-            category: "WEB DESIGN",
-            description: `Developed a smart health monitoring mobile app using React Native and Node.js, designed to track gait patterns for users wearing sensor-equipped smart shoes.
-            * Integrated real-time data collection via Bluetooth from multiple force sensors embedded in both shoes to provide accurate gait analysis.`
-            ,
+            description: `Developed a smart health monitoring mobile app using React Native and Node.js, designed to track gait patterns for users wearing sensor-equipped smart shoes.`,
             image: "/placeholder.svg?height=300&width=400",
             tags: ["WEB DESIGN", "DEVELOPMENT"],
             liveUrl: "#",
@@ -100,7 +95,6 @@ export default function ProjectsSection() {
                                 </div>
                             </div>
                             <div className="p-6">
-                                <div className="text-xs text-red-400 font-medium mb-2">{project.category}</div>
                                 <h3 className="text-xl font-medium text-gray-800 mb-3">{project.title}</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">{project.description}</p>
                             </div>

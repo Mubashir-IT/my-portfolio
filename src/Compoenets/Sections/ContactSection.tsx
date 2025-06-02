@@ -1,11 +1,67 @@
+"use client"
+import { useState } from "react"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
 import { Textarea } from "../ui/textarea"
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react"
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Send,
+} from "lucide-react"
+import emailjs from "emailjs-com"
+import toast, { Toaster } from "react-hot-toast"
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const { name, email, subject, message } = formData
+
+    if (!name || !email || !subject || !message) {
+      toast.error("Please fill in all fields")
+      return
+    }
+
+    emailjs
+      .send(
+        "service_99s7owh",
+        "template_01s2ycm",
+        {
+          from_name: name,
+          from_email: email,
+          subject,
+          message,
+        },
+        "IN_SXb2VXO1JMfxUc"
+      )
+      .then(() => {
+        toast.success("Message sent successfully!")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      })
+      .catch(() => {
+        toast.error("Failed to send message. Try again.")
+      })
+  }
+
   return (
     <section className="pt-20 pb-5 px-4 bg-gray-50">
+      <Toaster position="top-center" />
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-8">
@@ -26,7 +82,25 @@ export default function ContactSection() {
               </h3>
               <div className="space-y-2 ml-8">
                 <div className="text-gray-600">maubashirali9323@gmail.com</div>
-                <div className="text-gray-600">github.com/Mubashir-IT</div>
+               <div> <a
+                  href="https://github.com/Mubashir-IT"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:underline"
+                >
+                  github.com/Mubashir-IT
+                </a></div>
+                
+                <div>
+                  <a
+                  href="www.linkedin.com/in/mubashir-ali-hassan-7bb115369/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:underline"
+                >
+                  Linkdin.com/mubashir-ali-hassan-7bb115369
+                </a>
+                </div>
               </div>
             </div>
 
@@ -52,14 +126,43 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-4">
-                <Input placeholder="Full Name" className="rounded-xl border-gray-200" />
-                <Input placeholder="Email" type="email" className="rounded-xl border-gray-200" />
+                <Input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Full Name"
+                  className="rounded-xl border-gray-200"
+                />
+                <Input
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  type="email"
+                  placeholder="Email"
+                  className="rounded-xl border-gray-200"
+                />
               </div>
-              <Input placeholder="Subject" className="rounded-xl border-gray-200" />
-              <Textarea placeholder="Your Message" rows={6} className="rounded-xl border-gray-200 resize-none" />
-              <Button className="bg-red-400 hover:bg-red-500 text-white px-8 py-3 rounded-xl w-full sm:w-auto">
+              <Input
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Subject"
+                className="rounded-xl border-gray-200"
+              />
+              <Textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your Message"
+                rows={6}
+                className="rounded-xl border-gray-200 resize-none"
+              />
+              <Button
+                type="submit"
+                className="bg-red-400 hover:bg-red-500 text-white px-8 py-3 rounded-xl w-full sm:w-auto"
+              >
                 <Send className="w-4 h-4 mr-2" />
                 Send Message
               </Button>
@@ -67,11 +170,9 @@ export default function ContactSection() {
           </div>
         </div>
 
-        
-
         {/* Footer */}
-        <div className="flex flex-col md:flex-row  justify-center gap-10 items-center pt-8 px-20 border-t border-gray-200">
-          <p className="text-gray-500 text-[12px] m md:mb-0">
+        <div className="flex flex-col md:flex-row justify-center gap-10 items-center pt-8 px-20 border-t border-gray-200">
+          <p className="text-gray-500 text-[12px] md:mb-0">
             Copyright © 2025. All rights reserved.
           </p>
           <div className="flex gap-4">
